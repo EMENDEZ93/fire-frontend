@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fire-frontend';
+  app: string = "FIRE APP";
+  developer: string = "Edwin Mendez"
 }
