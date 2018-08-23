@@ -7,14 +7,7 @@ import { FooterComponent} from './footer/footer.component';
 import { DirectivaComponent } from './directiva/directiva.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './user/user.service';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
-  {path: '', redirectTo: '/users', pathMatch: 'full'},
-  {path: 'directivas', component: DirectivaComponent },
-  {path: 'users', component: UserComponent}
-];
-
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +19,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [
     UserService
