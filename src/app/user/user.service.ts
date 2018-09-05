@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { USERS } from './users.json';
 import { User } from './user';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { of } from 'rxjs';
 
 @Injectable()
 export class UserService {
+  constructor(private http: HttpClient) {}
 
-  constructor() {}
-
-    getUser(): Observable<User[]> {
-      return of(USERS);
+    public getUser(): Observable<User[]> {
+      return this.http.get<User[]>('https://fire-backend.herokuapp.com/users');
     }
   }
