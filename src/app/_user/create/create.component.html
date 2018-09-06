@@ -1,0 +1,18 @@
+<div class="clear" ></div>
+<form>
+
+  <div *ngIf="!isValid" class="alert alert-danger">
+    <strong>Danger!</strong> {{ message }}.
+  </div>
+
+  <div class="form-group">
+    <label for="">Nombre</label>
+    <input type="text" class="form-control" [(ngModel)]="user.nombre" name="nombre" id="nombre" placeholder="ingrese el nombre de la cuenta">
+    <small id="" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="">Telefono</label>
+    <input type="tel" class="form-control" [(ngModel)]="user.phone" id="phone" name="phone" placeholder="Telefono">
+  </div>
+  <button type="submit" (click)="save()" class="btn btn-primary">Save</button>
+</form>
